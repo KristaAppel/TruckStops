@@ -249,7 +249,7 @@ android:layout_height="wrap_content">
             app:srcCompat="@android:drawable/ic_menu_mylocation" />
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/trackingModeSwitch"
             android:layout_gravity="end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

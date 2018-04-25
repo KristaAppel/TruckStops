@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.kristaappel.truckstops.fragments.MapFragment;
 import com.kristaappel.truckstops.fragments.SearchFragment;
+import com.kristaappel.truckstops.objects.LocationHelper;
 
 import static android.os.Build.VERSION_CODES.M;
 import static com.kristaappel.truckstops.fragments.MapFragment.locationRequestCode;
@@ -34,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == MapFragment.locationRequestCode){
             if (grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 // Permission granted.
+                // Create & show map fragment; start location updates:
                 MapFragment mapFrag = new MapFragment();
+                LocationHelper.startLocationUpdates(this, mapFrag);
                 getFragmentManager().beginTransaction().replace(R.id.mapFrame, mapFrag).commit();
             }else{
                 if (grantResults[0] == PackageManager.PERMISSION_DENIED){
