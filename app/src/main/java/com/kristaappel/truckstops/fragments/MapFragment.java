@@ -178,7 +178,7 @@ public class MapFragment extends com.google.android.gms.maps.MapFragment impleme
                     BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.drawable.ic_truck);
                     googleMap.clear();
                     googleMap.addMarker(new MarkerOptions().position(myPosition).icon(bitmapDescriptor).title("Your Location")); //TODO: custom marker
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myPosition, 12));
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myPosition, 8));
                 }
             }
         }
